@@ -19,6 +19,7 @@
     <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+ <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
     <!-- Custom styles for this template -->
     <link href="{% static 'css/grayscale.min.css'%}" rel="stylesheet">
@@ -113,8 +114,15 @@
           <h2>Upload Image </h2>
           <h5>ResNet50</h5>
           <!-- <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p> -->
-          <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">From Local Disc</a>
+          <a href="http://startbootstrap.com/template-overviews/grayscale/" id= "localimage"   class="btn btn-default btn-lg">From Local Disc</a>
           <br><br><br>
+
+        <div>Relay 1:
+            <form action= {% url "upload_local" %} method="POST">
+                <input type="submit" value="from local disk" id="from local disk" />
+            </form>
+        </div>
+
 
           <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">From URL</a>
 
@@ -145,29 +153,30 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Contact Start Bootstrap</h2>
-            <p>Feel free to leave us a comment on the
-              <a href="http://startbootstrap.com/template-overviews/grayscale/">Grayscale template overview page</a>
-              on Start Bootstrap to give some feedback about this theme!</p>
+            <h2>Contact Me</h2>
+            <p>I have a few other projects can be viewed on
+              <a href="http://www.kevindcruz.com" target="blank"> My Website</a>
+              </p>
             <ul class="list-inline banner-social-buttons">
               <li class="list-inline-item">
-                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
-                  <i class="fa fa-twitter fa-fw"></i>
-                  <span class="network-name">Twitter</span>
+                <a href="https://linkedin.com/in/kevindcruz " target="blank" class="btn btn-default btn-lg">
+                  <i class="fa fa-linkedin fa-fw"></i>
+                  <span class="network-name">LinkedIn</span>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://github.com/BlackrockDigital/startbootstrap" class="btn btn-default btn-lg">
+                <a href="https://github.com/KevinDCruz" target="blank" class="btn btn-default btn-lg">
                   <i class="fa fa-github fa-fw"></i>
                   <span class="network-name">Github</span>
                 </a>
               </li>
-              <li class="list-inline-item">
+              <!--<li class="list-inline-item">
                 <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg">
                   <i class="fa fa-google-plus fa-fw"></i>
                   <span class="network-name">Google+</span>
                 </a>
               </li>
+          -->
             </ul>
           </div>
         </div>
@@ -180,7 +189,7 @@
     <!-- Footer -->
     <footer>
       <div class="container text-center">
-        <p>Copyright &copy; Your Website 2018</p>
+        <p>Copyright &copy; Kevin D"Cruz 2018</p>
       </div>
     </footer>
 
@@ -200,3 +209,23 @@
   </body>
 
 </html>
+
+<!--
+<script>
+    $(document).ready(function(){
+        $("#localimage").click(function(){
+            alert("Local Image")
+            $.ajax({
+                method: "GET",
+                url: "type your python script path here",
+                data: {"place" : value},
+                dataType: "text",
+                success: function(result){
+                    var data=JSON.parse(result);
+                    console.log(result);
+        })
+    })
+    })
+
+</script>
+-->

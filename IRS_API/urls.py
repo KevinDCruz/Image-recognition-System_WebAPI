@@ -19,6 +19,6 @@ from django.conf.urls import url, include
 from myapp import views as v
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url(r'^$', v.index)
-
+    url(r'^$', v.index),
+    url(r'^$', v.upload_local, name='upload_local'),
 ]
