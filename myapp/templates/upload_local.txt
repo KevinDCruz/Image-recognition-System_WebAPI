@@ -1,0 +1,5 @@
+<!--<div>Relay 1:
+            <form action= {% url "upload_local" %} method="POST">
+                <input type="submit" value="from local disk" id="from local disk" />
+            </form>
+        </div>-->

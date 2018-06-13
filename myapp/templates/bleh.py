@@ -11,7 +11,7 @@ def upload_local():
 
     root = Tk()
     root.filename = filedialog.askopenfilename(initialdir="/", title="Select file", filetypes=(("jpeg files", "*.jpg"), ("all files", "*.*")))
-    print(root.filename)
+    return root.filename
 
 
-upload_local()
+#upload_local()
