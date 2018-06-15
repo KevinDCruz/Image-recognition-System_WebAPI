@@ -1,3 +1,6 @@
+
+
+<!--ResNet50_Model: Upload Image> -->
 {% load staticfiles %}
 
 <!DOCTYPE html>
@@ -10,7 +13,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Image Recognition System</title>
+    <!--    <title>Image Recognition System</title> -->
+
+
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -26,35 +31,17 @@
 
   </head>
 
-<body>
-<!-- VGG19-->
-    <section id="VGG19" class="download-section content-section text-center" style="background-image: url(static/img/intro.jpg);">
+<!--ResNet50_Model: Upload Image> -->
+<section id="download" class="download-section content-section text-center" style="background-image: url(static/img/intro.jpg);">
       <div class="container">
         <div class="col-lg-8 mx-auto">
-          <h2>Upload Image </h2>
-          <h5>VGG19</h5>
-           <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-                <input type="file" name="myfile2" class="btn btn-default btn-lg">
-                <button type="submit" class="btn btn-default btn-lg">Upload</button>
-              </form>
+          <h2>Type of Image</h2>
+          <!-- <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p> -->
+          <a href="{% url 'ResNet50_Local'%}" id=ResNet50_Local class="btn btn-default btn-lg js-scroll-trigger">Choose from PC</a>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <a href="{% url 'ResNet50_URL'%}" id=ResNet50_URL class="btn btn-default btn-lg js-scroll-trigger">Choose from URL</a>
 
-              {% if uploaded_file_url %}
-              <img src="/{{uploaded_file_url}}">
-              {% endif %}
-
-
-          <br><br>
-          <center><a href="/?run=true" id= "localimage"   class="btn btn-default btn-lg">Predict</a></center>
-          {% if result %}
-          <div>
-            {{result}}
-          </div>
-          {% endif %}
-          <br><br><br>
-
-
-          <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">From URL</a>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
 
 
         </div>
@@ -62,7 +49,14 @@
     </section>
 
 
-<!-- Bootstrap core JavaScript -->
+    <!-- Footer -->
+    <footer>
+      <div class="container text-center">
+        <p>Copyright &copy; Kevin D"Cruz 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
     <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 
@@ -78,3 +72,4 @@
   </body>
 
 </html>
+

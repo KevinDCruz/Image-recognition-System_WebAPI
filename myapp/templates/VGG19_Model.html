@@ -1,0 +1,45 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Image Recognition System</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+ <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/grayscale.min.css'%}" rel="stylesheet">
+
+  </head>
+
+
+<!--VGG19: Upload Image> -->
+<section id="download" class="download-section content-section text-center" style="background-image: url(static/img/intro.jpg);">
+      <div class="container">
+        <div class="col-lg-8 mx-auto">
+          <h2>Type of Image</h2>
+          <!-- <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p> -->
+          <a href="{% url 'VGG19_Local'%}" id=VGG19_Local class="btn btn-default btn-lg js-scroll-trigger">Choose from PC</a>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <a href="{% url 'VGG19_URL'%}" id=VGG19_URL class="btn btn-default btn-lg js-scroll-trigger">Choose from URL</a>
+
+
+        </div>
+      </div>
+    </section>
+
+

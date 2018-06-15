@@ -28,35 +28,7 @@
 
   <body id="page-top">
 
-    <!-- Navigation -->
-<!--
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
 
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#download">Download</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </nav>
--->
     <!-- Intro Header -->
     <header class="masthead">
         <div class="intro-body" style="background-image: url(static/img/intro.jpg);">
@@ -84,36 +56,27 @@
                 <br>The system uses <a href="https://keras.io/">Keras</a>, which is a Neural Network API built in Python with the backend of <a href="https://www.tensorflow.org/">TensorFlow</a>. It shows the top 5 predictions of the Input Image and returns a bar graph showing the probabilities of the same. The Image can be uploaded from a local disk or by copying it's URL.</p>
 
             <p>Technology Used: <br> Backend: Python (Keras, TensorFlow, NumPy, Pandas, MatplotLib) <br>User Interface: HTML, CSS, JavaScript, Bootstrap, Django</p>
-            <a href="#download" class="btn btn-circle js-scroll-trigger">
+            <!--<a href="#download" class="btn btn-circle js-scroll-trigger">
                             <i class="fa fa-angle-double-down animated"></i>
-                        </a>
+                        </a> -->
+            <a href="{% url 'Models'%}" id=Models class="btn btn-default btn-lg js-scroll-trigger">Select a Model</a>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Model Selection -->
-    <section id="download" class="download-section content-section text-center" style="background-image: url(static/img/intro.jpg);">
-      <div class="container">
-        <div class="col-lg-8 mx-auto">
-          <h2>Choose a Model</h2>
-          <!-- <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p> -->
-          <a href="{% url 'ResNet50'%}" id=ResNet50 class="btn btn-default btn-lg js-scroll-trigger">ResNet50</a>
-          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-          <a href="{% url 'VGG19'%}" id=VGG19 class="btn btn-default btn-lg js-scroll-trigger">VGG19</a>
 
 
-        </div>
-      </div>
-    </section>
-
-
+<!--
     <script>
 
       var fileurl = "{{uploaded_file_url}}";
 
 
     </script>
+-->
+
 <!-- ResNet50
     <section id="ResNet50" class="download-section content-section text-center" style="background-image: url(static/img/intro.jpg);">
       <div class="container">
