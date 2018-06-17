@@ -39,7 +39,7 @@
           <h3>Upload Image: VGG19 </h3>
            <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-                <input type="file" name="myfile2" class="btn btn-default btn-lg"> &nbsp &nbsp
+                <input type="file" name="myfile" class="btn btn-default btn-lg"> &nbsp &nbsp
                 <button type="submit" class="btn btn-default btn-lg">Upload</button>
               </form>
             <br>
@@ -49,13 +49,20 @@
 
 
           <br><br>
+
+          <form action= "/VGG19_Local_Predict" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <input type="hidden" name="url" value="{{uploaded_file_url}}">
+                <button type="submit" class="btn btn-default btn-lg">Predict</button>
+              </form>
+          <!--
           <center><a href="/?run=true" id= "localimage"   class="btn btn-default btn-lg">Predict</a></center>
           {% if result %}
           <div>
             {{result}}
           </div>
           {% endif %}
-
+          -->
 
         </div>
       </div>

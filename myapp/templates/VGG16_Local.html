@@ -1,3 +1,5 @@
+
+<!-- VGG19_Local -->
 {% load staticfiles %}
 
 <!DOCTYPE html>
@@ -29,39 +31,15 @@
   </head>
 
 
-<!--
-    <script>
-
-      var fileurl = "{{uploaded_file_url}}";
-
-
-    </script>
--->
-<!-- Model Selection -->
-    <section id="download" class="download-section content-section text-center" style="background-image: url(static/img/intro.jpg);">
+<body>
+<!-- VGG19-->
+    <section id="VGG16_Local" class="download-section content-section text-center" style="background-image: url(static/img/intro.jpg);">
       <div class="container">
         <div class="col-lg-8 mx-auto">
-          <h2>Choose a Model</h2>
-          <!-- <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p> -->
-          <a href="{% url 'ResNet50_Model'%}" id=ResNet50_Model class="btn btn-default btn-lg js-scroll-trigger">ResNet50</a>
-          &nbsp&nbsp&nbsp&nbsp
-          <a href="{% url 'VGG16_Model'%}" id=VGG16_Model class="btn btn-default btn-lg js-scroll-trigger">VGG16</a>
-          &nbsp&nbsp&nbsp&nbsp
-          <a href="{% url 'VGG19_Model'%}" id=VGG19_Model class="btn btn-default btn-lg js-scroll-trigger">VGG19</a>
-          &nbsp&nbsp&nbsp&nbsp
-          <a href="{% url 'InceptionV3_Model'%}" id=VGG19_Model class="btn btn-default btn-lg js-scroll-trigger">InceptionV3</a>
-          &nbsp&nbsp&nbsp&nbsp
-          <a href="{% url 'DenseNet201_Model'%}" id=VGG19_Model class="btn btn-default btn-lg js-scroll-trigger">DenseNet</a>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div>
-      </div>
-    </section>
-        <!--
-            <form method="post" enctype="multipart/form-data">
+          <h3>Upload Image: VGG16 </h3>
+           <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
                 <input type="file" name="myfile" class="btn btn-default btn-lg"> &nbsp &nbsp
-
                 <button type="submit" class="btn btn-default btn-lg">Upload</button>
               </form>
             <br>
@@ -71,37 +49,27 @@
 
 
           <br><br>
-        -->
 
-
-          <!--<center><a href="/?run=true" id= "localimage"   class="btn btn-default btn-lg">Predict</a></center> -->
-
-        <!--
-          <center><a href="{% url 'ResNet50_Local_Predict'%}" id= "ResNet50_Local_Predict"   class="btn btn-default btn-lg">Predict</a></center>
+          <form action= "/VGG16_Local_Predict" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <input type="hidden" name="url" value="{{uploaded_file_url}}">
+                <button type="submit" class="btn btn-default btn-lg">Predict</button>
+              </form>
+          <!--
+          <center><a href="/?run=true" id= "localimage"   class="btn btn-default btn-lg">Predict</a></center>
           {% if result %}
           <div>
             {{result}}
           </div>
           {% endif %}
+          -->
 
         </div>
       </div>
-
-
     </section>
 
-        -->
 
-
-
-<!-- Footer -->
-    <footer>
-      <div class="container text-center">
-        <p>Copyright &copy; Kevin D"Cruz 2018</p>
-      </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
+<!-- Bootstrap core JavaScript -->
     <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 

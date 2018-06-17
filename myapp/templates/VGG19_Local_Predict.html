@@ -29,34 +29,24 @@
   </head>
 
 
-<!--
-    <script>
+<script>
 
       var fileurl = "{{uploaded_file_url}}";
 
 
     </script>
--->
-<!-- Model Selection -->
-    <section id="download" class="download-section content-section text-center" style="background-image: url(static/img/intro.jpg);">
+
+
+<!-- ResNet50 -->
+    <section id="ResNet50_Local_Predict" class="download-section content-section text-center" style="background-image: url(static/img/intro.jpg);">
       <div class="container">
         <div class="col-lg-8 mx-auto">
-          <h2>Choose a Model</h2>
-          <!-- <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p> -->
-          <a href="{% url 'ResNet50_Model'%}" id=ResNet50_Model class="btn btn-default btn-lg js-scroll-trigger">ResNet50</a>
-          &nbsp&nbsp&nbsp&nbsp
-          <a href="{% url 'VGG16_Model'%}" id=VGG16_Model class="btn btn-default btn-lg js-scroll-trigger">VGG16</a>
-          &nbsp&nbsp&nbsp&nbsp
-          <a href="{% url 'VGG19_Model'%}" id=VGG19_Model class="btn btn-default btn-lg js-scroll-trigger">VGG19</a>
-          &nbsp&nbsp&nbsp&nbsp
-          <a href="{% url 'InceptionV3_Model'%}" id=VGG19_Model class="btn btn-default btn-lg js-scroll-trigger">InceptionV3</a>
-          &nbsp&nbsp&nbsp&nbsp
-          <a href="{% url 'DenseNet201_Model'%}" id=VGG19_Model class="btn btn-default btn-lg js-scroll-trigger">DenseNet</a>
+          <h3>The Top 5 Predictions of the Image as per VGG19 are: </h3>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div>
-      </div>
-    </section>
+
+        <center><img src="/static/VGG19_Local.jpg" height="500" width="750"></center>
+        <br>
+
         <!--
             <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -73,6 +63,7 @@
           <br><br>
         -->
 
+        <center><a href="{% url 'Models'%}" id= "Models"  onClick="alert('Restart Server')" class="btn btn-default btn-lg">Predict another Image</a></center>
 
           <!--<center><a href="/?run=true" id= "localimage"   class="btn btn-default btn-lg">Predict</a></center> -->
 
@@ -92,6 +83,11 @@
 
         -->
 
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 <!-- Footer -->
