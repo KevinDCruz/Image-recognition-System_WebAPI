@@ -43,27 +43,28 @@
         <div class="col-lg-8 mx-auto">
           <h3>Upload Image: RESNET50 </h3>
           <!-- <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p> -->
-            <form method="post" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-                <h4>Enter a .jpg or .png URL: </h4><input type="url" name="myfile" class="btn btn-default btn-lg"> &nbsp &nbsp
+                </h4><input type="url" name="myfile" placeholder="Enter JPG of PNG Image" class="btn btn-default btn-lg"> &nbsp &nbsp
 
-                <button type="submit" class="btn btn-default btn-lg">Upload</button>
-              </form>
+                <!--<button type="submit" class="btn btn-default btn-lg">Upload</button>-->
+            </form>
             <br>
               {% if uploaded_file_url %}
               <img src="/{{uploaded_file_url}}" height="224" width="224">
               {% endif %}
 
+        <br><br>
+
+          <!--<center><a href="/?run=true" id= "localimage"   class="btn btn-default btn-lg">Predict</a></center> -->
+          <form action= "/ResNet50_URL_Predict" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <input type="hidden" name="url" value="{{image_url}}">
+                <button type="submit" class="btn btn-default btn-lg">Predict</button>
+              </form>
 
           <br><br>
-          <!--<center><a href="/?run=true" id= "localimage"   class="btn btn-default btn-lg">Predict</a></center>-->
-          <center><a href="{% url 'ResNet50_Local_Predict'%}" id= "urlimage"   class="btn btn-default btn-lg">Predict</a></center>
-          {% if result %}
-          <div>
-            {{result}}
-          </div>
-          {% endif %}
-          <br><br><br>
+
 
 
           <!--<a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">From URL</a>-->

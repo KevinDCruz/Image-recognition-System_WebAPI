@@ -44,8 +44,13 @@
           <h3>The Top 5 Predictions of the Image as per ResNet50 are: </h3>
 
 
+
+
+
+
         <center><img src="/static/ResNet50_Local.jpg" height="500" width="750"></center>
         <br>
+
 
         <!--
             <form method="post" enctype="multipart/form-data">
@@ -63,7 +68,7 @@
           <br><br>
         -->
         {{ statement }}
-        <center><a href="{% url 'Models'%}" id= "Models"   class="btn btn-default btn-lg">Predict another Image</a></center>
+        <center><a href="{% url 'Models'%}" id= "Models"  onClick="alert('Restart Server')" class="btn btn-default btn-lg">Predict another Image</a></center>
 
           <!--<center><a href="/?run=true" id= "localimage"   class="btn btn-default btn-lg">Predict</a></center> -->
 
