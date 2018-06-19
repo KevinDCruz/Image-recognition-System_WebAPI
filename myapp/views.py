@@ -100,13 +100,14 @@ def ResNet50_Local_Predict(request):
         my_param = "C:\\Users\\Kevin D'Cruz\\Downloads\\UMass\\GitHub\\Image Recognition System API\\IRS_API\\IRS_API\\" + request.POST.get('url')
         img = image.load_img(my_param, target_size=(224, 224))
 
-        plot_prediction(img)
+        k_1, l_1, grph = plot_prediction(img)
+        plot_graph_ResNet50(k_1, l_1, grph)
 
         # print(my_param)
 
         if my_param is None:
             return render(request, 'ResNet50_Local_Predict.html')
-    return render(request, 'ResNet50_Local_Predict.html')
+    return render(request, 'ResNet50_Local_Predict.html', {'item_name': k_1}, {'probability': l_1})
 
 # Prediction function: ResNet50 local image
 
@@ -130,6 +131,11 @@ def plot_prediction(img):
     k = prediction.b[0]
     l = prediction.c[0]
     print(graph)
+    # plot_graph(graph,k,l)
+    return(k, l, graph)
+
+
+def plot_graph_ResNet50(k, l, graph):
     statement = print("This picture has the highest possibility of a " + '\033[1m' '\033[4m' + k + "with a probability of " + l)
     print(statement)
     plt.bar(graph.b, graph.c, align='center', color='gray', edgecolor='black', width=0.4)
@@ -177,13 +183,13 @@ def VGG19_Local_Predict(request):
         my_param = "C:\\Users\\Kevin D'Cruz\\Downloads\\UMass\\GitHub\\Image Recognition System API\\IRS_API\\IRS_API\\" + request.POST.get('url')
         img = image.load_img(my_param, target_size=(224, 224))
 
-        plot_prediction_VGG19_Local(img)
-
+        k_1, l_1, grph = plot_prediction_VGG19_Local(img)
+        plot_graph(k_1, l_1, grph)
         # print(my_param)
 
         if my_param is None:
-            return render(request, 'VGG19_Local_Predict.html', k, l)
-    return render(request, 'VGG19_Local_Predict.html')
+            return render(request, 'VGG19_Local_Predict.html')
+    return render(request, 'VGG19_Local_Predict.html', {'item_name': k_1})
 
 
 def predict_VGG19(model_VGG19, img, target_size, top_n=5):
@@ -205,6 +211,10 @@ def plot_prediction_VGG19_Local(img):
     k = prediction.b[0]
     l = prediction.c[0]
     print(graph)
+    return(k, l, graph)
+
+
+def plot_graph(k, l, graph):
     statement = print("This picture has the highest possibility of a " + '\033[1m' '\033[4m' + k + "with a probability of " + l)
     print(statement)
     # display(graph)

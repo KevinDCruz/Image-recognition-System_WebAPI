@@ -52,14 +52,18 @@
         <div class="row">
           <div class="col-lg-9 mx-auto">
             <h2>About the Project</h2>
-            <p>This Project focusses on the Computer Vision domain of Computer Science and uses Deep Learning techniques for Image Recognition. Convolutional Neural Networks plays a major role in Deep Learning and forms the base for this system.
-                <br>The system uses <a href="https://keras.io/">Keras</a>, which is a Neural Network API built in Python with the backend of <a href="https://www.tensorflow.org/">TensorFlow</a>. It shows the top 5 predictions of the Input Image and returns a bar graph showing the probabilities of the same. The Image can be uploaded from a local disk or by copying it's URL.</p>
+            <p>This Project focusses on the Computer Vision domain of Computer Science and uses Deep Learning techniques for Image Recognition of common objects. Convolutional Neural Networks plays a major role in Deep Learning and forms the base for this system.
+                <br>The Backend Technology used in this project consists of <a href="https://keras.io/">Keras</a>, an API designed for Neural Networks and <a href="https://www.tensorflow.org/">TensorFlow</a>, Google's framework for Machine Learning. The Models trained include <a href="https://arxiv.org/abs/1512.03385">ResNet50</a> and <a href="https://arxiv.org/abs/1409.1556">VGG19</a>, where the weights are from <a href="http://www.image-net.org/">Imagenet</a>. The WEB API is built using Django and Bootstrap. It shows a bar chart of the top 5 predictions of the Input Image along with it's probabilities.<br>
 
-            <p>Technology Used: <br> Backend: Python (Keras, TensorFlow, NumPy, Pandas, MatplotLib) <br>User Interface: HTML, CSS, JavaScript, Bootstrap, Django</p>
+            <br><u>Technology Used:</u> <br> Backend: Python3, Libraries: (Keras, TensorFlow, NumPy, Pandas, MatplotLib)
+            <br>
+            Frontend: Django, Bootstrap (HTML, CSS, JavaScript)</p>
             <!--<a href="#download" class="btn btn-circle js-scroll-trigger">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a> -->
             <a href="{% url 'Models'%}" id=Models class="btn btn-default btn-lg js-scroll-trigger">Select a Model</a>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <a href="#video" id=Models class="btn btn-default btn-lg js-scroll-trigger">Watch the Demo</a>
 
           </div>
         </div>
@@ -68,65 +72,23 @@
 
 
 
-<!--
-    <script>
-
-      var fileurl = "{{uploaded_file_url}}";
-
-
-    </script>
--->
-
-<!-- ResNet50
-    <section id="ResNet50" class="download-section content-section text-center" style="background-image: url(static/img/intro.jpg);">
+<section id="video" class="content-section text-center">
       <div class="container">
-        <div class="col-lg-8 mx-auto">
-          <h2>Upload Image </h2>
-          <h4>ResNet50</h4>
-            <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-                <input type="file" name="myfile" class="btn btn-default btn-lg">
-                <button type="submit" class="btn btn-default btn-lg">Upload</button>
-              </form>
+        <div class="row">
+          <div class="col-lg-9 mx-auto">
+            <h2>Video Demo</h2>
 
-              {% if uploaded_file_url %}
-              <img src="/{{uploaded_file_url}}">
-              {% endif %}
+        <iframe width="660" height="402" src="https://www.youtube.com/embed/OAcn6y5S23Y" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <br>
+        <a href="#contact" class="btn btn-circle js-scroll-trigger">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
 
-
-          <br><br>
-          <center><a href="/?run=true" id= "localimage"   class="btn btn-default btn-lg">Predict</a></center>
-          {% if result %}
-          <div>
-            {{result}}
           </div>
-          {% endif %}
-          <br><br><br>
-
-
-          <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">From URL</a>
-
-
         </div>
       </div>
     </section>
-  -->
 
-    <!-- VGG19
-    <section id="VGG19" class="download-section content-section text-center" style="background-image: url(static/img/intro.jpg);">
-      <div class="container">
-        <div class="col-lg-8 mx-auto">
-          <h2>Upload Image </h2>
-          <h5>VGG19</h5>
-          <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">From Local Disc</a>
-          <br><br><br>
-
-          <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">From URL</a>
-
-
-        </div>
-      </div>
-    </section> -->
 
     <!-- Contact Section -->
     <section id="contact" class="content-section text-center">
@@ -190,22 +152,3 @@
 
 </html>
 
-<!--
-<script>
-    $(document).ready(function(){
-        $("#localimage").click(function(){
-            alert("Local Image")
-            $.ajax({
-                method: "GET",
-                url: "type your python script path here",
-                data: {"place" : value},
-                dataType: "text",
-                success: function(result){
-                    var data=JSON.parse(result);
-                    console.log(result);
-        })
-    })
-    })
-
-</script>
--->
